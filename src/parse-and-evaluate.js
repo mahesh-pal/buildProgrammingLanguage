@@ -8,20 +8,13 @@ const { transform } = require('./transform');
 const parseAndEvaluate = pipe(
   tokenize,
   parse,
-  transform,
+  //transform,
   evaluate,
 );
 
-const tokenizeAndParse = pipe(
-  tokenize,
-  parse,
-);
+const tokenizeAndParse = pipe(tokenize, parse);
 
-const parseAndEvaluateProgram = pipe(
-  tokenize,
-  parseProgram,
-  evaluate,
-);
+const parseAndEvaluateProgram = pipe(tokenize, parseProgram, evaluate);
 
 module.exports = {
   parseAndEvaluate,
